@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Input and Display</title>
+  <style>
+    body {
+      background-color: #121212; /* Dark background */
+      color: #f0f0f0;            /* Light text for contrast */
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input[type="text"] {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border: 1px solid #444;
+      padding: 8px;
+      width: 300px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #printArea {
+      border: 1px solid #444;
+      padding: 10px;
+      min-height: 20px;
+      background-color: #1e1e1e;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Text Below:</h2>
+  
+  <!-- Text box for user input -->
+  <input type="text" id="myTextBox" placeholder="Type something here..." />
+
+  <!-- Button to trigger display -->
+  <button onclick="displayText()">Submit</button>
+  <button onClick="stopStream()">Stop</button>
+
+  <!-- Print area -->
+  <h3>Output:</h3>
+  <div id="printArea" style="border: 1px solid #ccc; padding: 10px; min-height: 20px;"></div>
+
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script>
+    const socket = io('http://localhost:5000'); // Adjust URL as needed
+    socket.on('connect', () => {
+        console.log('Connected to server');
+    });
+
+    function displayText() {
+      // Get value from the text box
+      var input = document.getElementById("myTextBox").value;
+      socket.emit("recieve", input)
+
+      // Set the value to the print area
+      socket.on("sent", (data) => {
+        document.getElementById("printArea").innerText = data;
+      })
+    }
+
+    function stopStream() {
+        socket.emit("stop", "stop")
+    }
+  </script>
+
+</body>
+</html>
