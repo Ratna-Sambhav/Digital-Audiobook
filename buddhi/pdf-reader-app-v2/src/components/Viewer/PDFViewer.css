@@ -1,0 +1,315 @@
+/* src/components/Viewer/PDFViewer.css */
+
+.pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #f1f5f9;
+  position: relative;
+}
+
+.pdf-viewer.dark-mode {
+  background: #1a1a2e;
+}
+
+.pdf-content {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.pdf-scroll-container {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.pdf-viewer.dark-mode .pdf-scroll-container {
+  background: #0f0f1e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pdf-page {
+  display: block;
+  margin: 0 auto;
+}
+
+.pdf-page canvas {
+  display: block !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.pdf-loading,
+.pdf-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  min-height: 200px;
+}
+
+.pdf-loading .loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pdf-loading .loading-text {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.pdf-viewer.dark-mode .pdf-loading .loading-text {
+  color: #cbd5e1;
+}
+
+.pdf-error .error-text {
+  color: #ef4444;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.retry-btn {
+  padding: 8px 16px;
+  background: #6366f1;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.controls-toggle-btn {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.controls-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+}
+
+.pdf-controls {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 100;
+}
+
+.pdf-controls.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.pdf-controls.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.control-btn.nav-btn {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.control-btn.nav-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.control-btn.fullscreen-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.control-btn.fullscreen-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.page-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  height: 44px;
+}
+
+.page-current {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.page-separator {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.page-total {
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.page-input-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.page-label {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.page-input {
+  width: 60px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.page-input:focus {
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.go-btn {
+  padding: 8px 16px;
+  background: #6366f1;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.go-btn:hover {
+  background: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.zoom-info {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 60px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.zoom-btn {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zoom-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

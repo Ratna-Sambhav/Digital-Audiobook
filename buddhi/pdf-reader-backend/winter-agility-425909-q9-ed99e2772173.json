@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "winter-agility-425909-q9",
+  "private_key_id": "ed99e27721735d5606db0347eedda6b410a4e120",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDPcT6SuqbHJTrF\nWXzQ4SU3exKXtykDgeFf9xd2YueSp6hDhlSk3lp+ylM6AcORuJtWCbPZjmnoxy72\nAzvSewjMKQ4m/BDa66sCBmYJ+uRu2iEvi953dPjsTnT4OnasLws0kh+GOy3M0rDp\njiDmpnT0Y/eumdF61l01eJya2X96EXHqzgdwfDB8k16zMm+Ajt2Se38tY2bmEmyp\nPWNXxk2r6y8VYL45wOY/zVQ/D0W1wnqdwaSQr/swNTOWnjWmM1SbnHdGtXdNv7ma\nsR7+L1dvbpXaXpQUXDrwBw6mCPYolKm8be2laaN7/is/kBFNE6RE1Cu+i4wTvoWX\n1n9nM3NpAgMBAAECggEADbiW+9fYfvjnkKTtCHhx8J/lgI9DCVo6jPFQNhqP6G+K\nRdAhcmfKOtN5ao9yDwYT0T6yTJg6yWS+ZpObbf5JHE71Yo7+8uoObUN81ZloqWvo\ncMeKwyJDska0vjQIxDYW4sbtCqEItCD2BnbKFpOJTh58JCqEtIAwGWC1VBlBkTJu\nb7cd0dgrKRBGG3Ekvl1XJClARNIbBckd80LyqU0Nz9vacrB9HUc1O9yg0cgwFiCh\n9VqWa6poMu1PhBMZeiyj33bMwZRSADBaN2beGetAgy7o7Sc2Tc5MyTqUrUyL1g5C\n8RG1nm1Nm37bj6zfTE5xFPzPWsatyuMcLSKwqD6tYQKBgQDwr1dUIK1tGs/6Pq2v\nMa9ZshGH5JMC7QqVR/38KTHRYt5xKsHORcOTQb3yE6zGeB98C2G9sM79XfOCyGyc\nWGq5hN5bcjG4wyksphbrelfp8lGAv4J0CRFks0ybalQMrgSuRECa01FZo+A+dVtx\nezXFHeijcOmTzB9iT57mNvcLyQKBgQDcpGVBNe1W0OcproiX+PEZRA4UP0MDNW3g\nQpxtlQtI2G2CTe1Wl10LtTNcJqyzgFtgbZ/V+DZ0EYUKNyqLxXBQfry8x4Zy4f/g\nAo6F0nBXnqWt/ziM2oNt3JBKLoRDnTy8WyZHAkJzzPFP73dlXbRNi+Wz3d4OIGZF\nRsNwtZ26oQKBgDTnBXXrXNM/cnlZr4lzjUxU1H+fISUifxIC6fO0Bkw0xBnxwPma\n4fsLFzoPUwmou5rjUY+FPmn4bZ7QePcAhCzU5J8LAZzP4Mv8kcsecBZu+bUn4v+o\nQpd0xaDfhSvoUAUR4XVmf1oJqC9yUjAmWdJC2bCbD+w5kKhmQdHuQOzpAoGAShIC\nT/b7m0Z8I/kMsAAJaFL5awClzYD1RvD1tK/xXt4RPUpN3+DmgpStDkWJeqUfh+ql\nWt594U80W26ToOKCRvOVBsbwssZ98MTK9c/kmPWQZy4j3N1Ke+osokqlalFx30W2\nPuZaSqfFZvFcIrJnYhUR4uUbs6Ba1OzhlYfS0KECgYAannmTKEMIVz+JPoC8zWrw\nGKQrttw6HlrpCJp9NVDhgvY216uPwnXn9M3skRYgdTZ7qnEgSX1cy4s1+P245XdC\n8nLeV4+eHIFjpWaez++R/hrcuj2WmUuMl0cbR6dy2F3Fnl58F5Q2+adfqbTXWVsb\nKKGDZLY3Cua6jaKJXixtUw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "translation-api@winter-agility-425909-q9.iam.gserviceaccount.com",
+  "client_id": "105544880318758571638",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/translation-api%40winter-agility-425909-q9.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

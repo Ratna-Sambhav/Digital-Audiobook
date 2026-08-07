@@ -1,0 +1,375 @@
+/* src/components/Sidebar/SessionList.css */
+
+.session-list {
+  height: 100%;
+}
+
+.empty-sessions {
+  padding: 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.session-item {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.session-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.session-header:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.session-header.active {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}
+
+.session-menu-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.session-header:hover .session-menu-btn {
+  display: flex;
+}
+
+.session-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.session-menu-icon {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.session-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 13px;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item.danger:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.dropdown-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.dropdown-item.danger .dropdown-icon {
+  color: #ef4444;
+}
+
+.session-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #6366f1;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  outline: none;
+}
+
+.edit-btn {
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn.save:hover {
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.edit-btn.cancel:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.edit-icon {
+  width: 14px;
+  height: 14px;
+  color: white;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  padding-right: 32px;
+}
+
+.session-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-icon {
+  width: 16px;
+  height: 16px;
+  color: #a5b4fc;
+}
+
+.session-title {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.session-date {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.section-item {
+  margin-bottom: 4px;
+}
+
+.session-sections {
+  margin-left: 16px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.section-header:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.section-arrow {
+  font-size: 10px;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.section-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.section-title {
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.section-count {
+  margin-left: auto;
+  color: #64748b;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.section-content.expanded {
+  max-height: 500px;
+}
+
+.section-empty {
+  padding: 8px 12px;
+  color: #64748b;
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.file-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #6366f1;
+}
+
+.file-item.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-left-color: #6366f1;
+}
+
+.file-content {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.file-name {
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.file-size {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.file-delete-btn {
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.file-item:hover .file-delete-btn {
+  opacity: 1;
+}
+
+.file-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.delete-icon {
+  width: 14px;
+  height: 14px;
+  color: #ef4444;
+}
+
+.test-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.test-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #8b5cf6;
+}
+
+.test-icon {
+  width: 16px;
+  height: 16px;
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.test-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.test-name {
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.test-questions {
+  color: #64748b;
+  font-size: 10px;
+}
